@@ -152,13 +152,14 @@ public class DatabaseController {
         }
     }
 
-    public void addNotat(Integer treningsøktid, String Beskrivelse) {
-        String sql = "insert into tre (Øvelsesgruppeid, Beskrivelse) values(?,?)";
+    public void addNotat(Integer treningsøktid, String treningsformål, String Vurdering) {
+        String sql = "insert into notat (treningsøktid, treningsformål, Vurdering) values(?,?,?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, Ovelsegruppe);
-            ps.setString(2, Beskrivelse);
+            ps.setInt(1, treningsøktid);
+            ps.setString(2, treningsformål);
+            ps.setString(3, Vurdering);
             stmt = conn.createStatement();
             stmt.executeUpdate(sql);
 
@@ -166,6 +167,8 @@ public class DatabaseController {
             e.printStackTrace();
         }
     }
+
+    
 
 
 
