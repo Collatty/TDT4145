@@ -1,5 +1,7 @@
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseController {
 
@@ -147,13 +149,13 @@ public class DatabaseController {
 
     }
 
-    public void addTreningsokt(Date Dato, Time Tidspunkt, Integer Varighet) {
+    public void addTreningsokt(String Dato, String Tidspunkt, Integer Varighet) {
         String sql = "insert into Treningsøkt (Dato, Tidspunkt, Varighet) values(?,?,?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setDate(1, Dato);
-            ps.setTime(2, Tidspunkt);
+            ps.setString(1, Dato);
+            ps.setString(2, Tidspunkt);
             ps.setInt(3, Varighet);
 
             stmt = conn.createStatement();
@@ -179,6 +181,36 @@ public class DatabaseController {
             e.printStackTrace();
         }
     }
+
+    public List<String> getOvelser() throws SQLException {
+
+        ResultSet rs = null;
+        List<String> Ovelser = new ArrayList<String>();
+
+        String sql = "select ØvelseID from Øvelse";
+        try {
+            stmt = conn.createStatement();
+            stmt.executeQuery(sql);
+            rs = stmt.getResultSet();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        if (rs != null) {
+            while (rs.next()) {
+                String Ovelse = rs.getString(1);
+                Ovelser.add(Ovelse);
+
+
+            }
+        }
+        return Ovelser;
+
+
+    }
+
+
 
 
 

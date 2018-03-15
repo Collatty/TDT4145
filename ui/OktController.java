@@ -1,12 +1,16 @@
 
 import java.awt.Checkbox;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import javafx.collections.FXCollections;
-import java.util.Calendar;
+
 import java.text.SimpleDateFormat;
+
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +22,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
 
 public class OktController implements Initializable, ControlledScreen{
+
+
+
+	public  List<OvelseIOkt> ovelseiokt = new ArrayList<OvelseIOkt>();
+
 
 	private ScreensController myController;
 	
@@ -34,7 +43,7 @@ public class OktController implements Initializable, ControlledScreen{
     @FXML
     private TextField oktVarighet;
     @FXML
-    private ListView<?> ovelseListe;
+    private ListView<String> ovelseListe;
     @FXML
     private AnchorPane ovelseVindu;
     @FXML
@@ -49,10 +58,18 @@ public class OktController implements Initializable, ControlledScreen{
     private CheckBox todayCheck;
     @FXML
     private AnchorPane ownDate;
+    @FXML
+    private ListView<OvelseIOkt> oktListe;
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		setChoiceBoxes();
+		try {
+			updateOvelseListe();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+
 		todayCheck.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			@Override
             public void handle(MouseEvent event) {
@@ -61,7 +78,14 @@ public class OktController implements Initializable, ControlledScreen{
 				}
 			}
 		});
+
 		
+	}
+
+	public void updateOvelseListe() throws SQLException{
+		List<String> ovelserliste = myController.dbController.getOvelser();
+		ObservableList<String> ovelser = FXCollections.observableList(ovelserliste);
+		ovelseListe.setItems(ovelser);
 	}
 	
 	public void setChoiceBoxes() {
@@ -89,7 +113,30 @@ public class OktController implements Initializable, ControlledScreen{
 		System.out.println("\t-ØKT-\nDato: "+dato+"\nStartet kl: "+startTid+"\nVarighet: "+varighet);
 		//her vil vi også ha en liste med øvelse-i-økt instanser.
 	}
-	
+
+	@FXML
+	public void leggTilOvelse(){
+
+	    //ovelseiokt.add();
+        ObservableList<OvelseIOkt> ovelseriokt = FXCollections.observableList(ovelseiokt);
+        oktListe.setItems(ovelseriokt);
+
+	}
+	@FXML
+    public void oprettOkt(){
+        String dato = null;
+        if (todayCheck.isSelected()) {
+            String DATE_FORMAT_NOW = "yyyy-MM-dd";
+            Calendar cal = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
+            dato = sdf.format(cal.getTime());
+
+        }else{dato = Date(okt_dag, okt_mnd, okt_ar);}
+
+        String startTid = oktTime.getText()+":"+oktMinutt.getText()+":00";
+        Integer varighet = Integer.parseInt((oktVarighet.getText()));
+	    myController.dbController.addTreningsokt(dato, startTid, varighet);
+    }
 	public String Date(ChoiceBox<String> dag, ChoiceBox<String> mnd, ChoiceBox<String> ar) {
 		String dato = "";
 		dato += ar.getValue();

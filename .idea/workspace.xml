@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bee1b016-d39a-459e-9a21-cc7c3ecf6dc9" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/OvelseIOkt.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Databaser.iml" afterPath="$PROJECT_DIR$/Databaser.iml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Databaser/DatabaseController.class" afterPath="$PROJECT_DIR$/out/production/Databaser/DatabaseController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Databaser/Okt.fxml" afterPath="$PROJECT_DIR$/out/production/Databaser/Okt.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Databaser/OktController$1.class" afterPath="$PROJECT_DIR$/out/production/Databaser/OktController$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Databaser/OktController.class" afterPath="$PROJECT_DIR$/out/production/Databaser/OktController.class" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseController.java" afterPath="$PROJECT_DIR$/src/DatabaseController.java" />
-      <change beforePath="$PROJECT_DIR$/src/JDBCExample.java" afterPath="$PROJECT_DIR$/src/JDBCExample.java" />
-      <change beforePath="$PROJECT_DIR$/ui/Apparat.fxml" afterPath="$PROJECT_DIR$/ui/Apparat.fxml" />
-      <change beforePath="$PROJECT_DIR$/ui/ApparatController.java" afterPath="$PROJECT_DIR$/ui/ApparatController.java" />
-      <change beforePath="$PROJECT_DIR$/ui/ApplicationDemo.java" afterPath="$PROJECT_DIR$/ui/ApplicationDemo.java" />
-      <change beforePath="$PROJECT_DIR$/ui/ControlledScreen.java" afterPath="$PROJECT_DIR$/ui/ControlledScreen.java" />
-      <change beforePath="$PROJECT_DIR$/ui/Database.java" afterPath="$PROJECT_DIR$/ui/Database.java" />
       <change beforePath="$PROJECT_DIR$/ui/Okt.fxml" afterPath="$PROJECT_DIR$/ui/Okt.fxml" />
       <change beforePath="$PROJECT_DIR$/ui/OktController.java" afterPath="$PROJECT_DIR$/ui/OktController.java" />
-      <change beforePath="$PROJECT_DIR$/ui/Ovelse.fxml" afterPath="$PROJECT_DIR$/ui/Ovelse.fxml" />
-      <change beforePath="$PROJECT_DIR$/ui/OvelseController.java" afterPath="$PROJECT_DIR$/ui/OvelseController.java" />
-      <change beforePath="$PROJECT_DIR$/ui/OvelseGruppe.fxml" afterPath="$PROJECT_DIR$/ui/OvelseGruppe.fxml" />
-      <change beforePath="$PROJECT_DIR$/ui/OvelseGruppeController.java" afterPath="$PROJECT_DIR$/ui/OvelseGruppeController.java" />
-      <change beforePath="$PROJECT_DIR$/ui/ScreensController.java" afterPath="$PROJECT_DIR$/ui/ScreensController.java" />
-      <change beforePath="$PROJECT_DIR$/ui/SokOvelseGruppe.fxml" afterPath="$PROJECT_DIR$/ui/SokOvelseGruppe.fxml" />
-      <change beforePath="$PROJECT_DIR$/ui/SokOvelseGruppeController.java" afterPath="$PROJECT_DIR$/ui/SokOvelseGruppeController.java" />
-      <change beforePath="$PROJECT_DIR$/ui/homeScreen.fxml" afterPath="$PROJECT_DIR$/ui/homeScreen.fxml" />
-      <change beforePath="$PROJECT_DIR$/ui/homeScreenController.java" afterPath="$PROJECT_DIR$/ui/homeScreenController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,19 +25,75 @@
       <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+            <state relative-caret-position="195">
+              <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5437#5445#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OvelseIOkt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OvelseIOkt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#624#625#0" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#815#816#0" expanded="true" />
+                <element signature="e#842#843#0" expanded="true" />
+                <element signature="e#876#877#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Okt.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/Okt.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="53" column="90" lean-forward="false" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/ApplicationDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationDemo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/ApplicationDemo.java">
+      <file leaf-file-name="OktController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/OktController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-              <folding />
+            <state relative-caret-position="322">
+              <caret line="138" column="5" lean-forward="true" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#737#749#0" expanded="true" />
+                <element signature="e#4758#4759#0" expanded="true" />
+                <element signature="e#4817#4818#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,7 +101,7 @@
       <file leaf-file-name="OvelseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/OvelseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
+            <state relative-caret-position="198">
               <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
               <folding>
                 <element signature="e#1022#1023#0" expanded="true" />
@@ -86,50 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homeScreen.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/homeScreen.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="10" column="141" lean-forward="false" selection-start-line="10" selection-start-column="141" selection-end-line="10" selection-end-column="141" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Okt.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/Okt.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="180" lean-forward="false" selection-start-line="11" selection-start-column="180" selection-end-line="11" selection-end-column="180" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Ovelse.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/Ovelse.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="227">
               <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OvelseGruppe.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/OvelseGruppe.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="141" lean-forward="false" selection-start-line="9" selection-start-column="141" selection-end-line="9" selection-end-column="141" />
               <folding />
             </state>
           </provider>
@@ -182,19 +188,21 @@
         <option value="$PROJECT_DIR$/ui/ApplicationDemo.java" />
         <option value="$PROJECT_DIR$/ui/Database.java" />
         <option value="$PROJECT_DIR$/ui/homeScreenController.java" />
-        <option value="$PROJECT_DIR$/ui/OktController.java" />
         <option value="$PROJECT_DIR$/ui/SokOvelseGruppeController.java" />
         <option value="$PROJECT_DIR$/ui/Apparat.fxml" />
         <option value="$PROJECT_DIR$/ui/homeScreen.fxml" />
-        <option value="$PROJECT_DIR$/ui/Okt.fxml" />
         <option value="$PROJECT_DIR$/ui/OvelseGruppe.fxml" />
         <option value="$PROJECT_DIR$/ui/SokOvelseGruppe.fxml" />
         <option value="$PROJECT_DIR$/ui/ScreensController.java" />
         <option value="$PROJECT_DIR$/ui/ApparatController.java" />
         <option value="$PROJECT_DIR$/ui/OvelseGruppeController.java" />
-        <option value="$PROJECT_DIR$/src/DatabaseController.java" />
         <option value="$PROJECT_DIR$/ui/Ovelse.fxml" />
         <option value="$PROJECT_DIR$/ui/OvelseController.java" />
+        <option value="$PROJECT_DIR$/src/OvelseIOktController.java" />
+        <option value="$PROJECT_DIR$/src/OvelseIOkt.java" />
+        <option value="$PROJECT_DIR$/ui/Okt.fxml" />
+        <option value="$PROJECT_DIR$/src/DatabaseController.java" />
+        <option value="$PROJECT_DIR$/ui/OktController.java" />
       </list>
     </option>
   </component>
@@ -253,6 +261,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
@@ -432,7 +441,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286445" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -506,7 +515,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5437#5445#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -543,14 +555,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/homeScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/OktController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -596,17 +600,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/Okt.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="180" lean-forward="false" selection-start-line="11" selection-start-column="180" selection-end-line="11" selection-end-column="180" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/OvelseGruppe.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -637,30 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ApparatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/OvelseGruppeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/Ovelse.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -672,9 +641,25 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/OvelseGruppeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ApparatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ui/OvelseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
+        <state relative-caret-position="198">
           <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
           <folding>
             <element signature="e#1022#1023#0" expanded="true" />
@@ -683,11 +668,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/Okt.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="53" column="90" lean-forward="false" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5437#5445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OvelseIOkt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ui/ApplicationDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        <state relative-caret-position="145">
+          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/OktController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="138" column="5" lean-forward="true" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#737#749#0" expanded="true" />
+            <element signature="e#4758#4759#0" expanded="true" />
+            <element signature="e#4817#4818#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
