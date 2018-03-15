@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #f3f4f7;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.OktController">
+   <children>
+      <Text fill="#030303" layoutX="205.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kl:          :" />
+      <TextField fx:id="oktTime" layoutX="222.0" layoutY="100.0" prefHeight="26.0" prefWidth="37.0" />
+      <TextField fx:id="oktMinutt" layoutX="267.0" layoutY="100.0" prefHeight="26.0" prefWidth="37.0" />
+      <Text fill="#030303" layoutX="320.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varighet:" />
+      <TextField fx:id="oktVarighet" layoutX="377.0" layoutY="100.0" prefHeight="26.0" prefWidth="37.0" />
+      <Text fill="#030303" layoutX="414.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="minutter" />
+      <Text fill="#030303" layoutX="142.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRER ØKT" textAlignment="CENTER" wrappingWidth="225.1162109375" />
+      <ListView fx:id="ovelseListe" layoutX="29.0" layoutY="185.0" prefHeight="134.0" prefWidth="200.0" />
+      <Text layoutX="29.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Øvelser:" />
+      <CheckBox fx:id="todayCheck" layoutX="56.0" layoutY="104.0" mnemonicParsing="false" selected="true" text="Dagens dato" />
+      <AnchorPane fx:id="ovelseVindu" layoutX="267.0" layoutY="185.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray; -fx-border-color: gray;">
+         <children>
+            <Text layoutX="79.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="navn">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Set" layoutX="90.0" layoutY="33.0" prefHeight="26.0" prefWidth="87.0" promptText="Set" />
+            <TextField fx:id="Kg" layoutX="90.0" layoutY="64.0" prefHeight="26.0" prefWidth="87.0" promptText="Kg" />
+            <Button layoutX="67.0" layoutY="160.0" mnemonicParsing="false" text="Legg Til" />
+            <Text layoutX="37.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set:" />
+            <Text layoutX="38.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kg:" />
+            <Text layoutX="30.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Form:" />
+            <Text layoutX="33.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prestasjon:" />
+            <ChoiceBox fx:id="form" layoutX="134.0" layoutY="98.0" prefHeight="16.0" prefWidth="37.0" />
+            <ChoiceBox fx:id="prestasjon" layoutX="134.0" layoutY="126.0" prefHeight="16.0" prefWidth="37.0" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="396.0" layoutY="460.0" mnemonicParsing="false" onAction="#loggOkt" text="Fullfør" />
+      <Button layoutX="32.0" layoutY="20.0" mnemonicParsing="false" onAction="#goToHome" text="Back" />
+      <AnchorPane fx:id="ownDate" layoutX="8.0" layoutY="83.0" prefHeight="44.0" prefWidth="191.0" style="-fx-background-color: #f3f4f7; visibility: false;">
+         <children>
+            <ChoiceBox fx:id="okt_dag" layoutX="14.0" layoutY="17.0" prefHeight="26.0" prefWidth="42.0" />
+            <ChoiceBox fx:id="okt_mnd" layoutX="62.0" layoutY="17.0" prefHeight="26.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="okt_ar" layoutX="122.0" layoutY="17.0" prefHeight="26.0" prefWidth="54.0" />
+            <Text fill="#797474" layoutX="25.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dag       Mnd       År" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
