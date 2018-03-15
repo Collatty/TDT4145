@@ -1,4 +1,3 @@
-package ui;
 
 
 import java.util.HashMap;
@@ -12,6 +11,7 @@ import javafx.scene.layout.StackPane;
 public class ScreensController  extends StackPane{//StackPane lays out its children in a back-to-front stack.
     
 	//Holds the screens to be displayed
+    public static DatabaseController dbController = new DatabaseController();
     private HashMap<String, Node> screens = new HashMap<>();
     
     public ScreensController() {
@@ -43,6 +43,8 @@ public class ScreensController  extends StackPane{//StackPane lays out its child
             e.printStackTrace();    
         }
     }
+
+
 
     //Tries to displayed the screen with a predefined name.
     //First it makes sure the screen has been already loaded.  Then if there is more than

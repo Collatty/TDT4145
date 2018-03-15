@@ -4,17 +4,20 @@ import java.sql.*;
 public class DatabaseController {
 
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/";
+    static final String DB_URL = "jdbc:mysql://mysql.stud.ntnu.no:3306/ntnu_all_treningsdagbok?autoReconnect=true&useSSL=false";
 
 
     //  Database credentials
-    static final String USER = "hakon";
-    static final String PASS = null;
+    static final String USER = "ntnu_all_dbprosjekt";
+    static final String PASS = "hei123";
 
     Connection conn = null;
     Statement stmt = null;
 
-    public void start() {
+
+    public DatabaseController() {
+
+
 
 
         try {
@@ -24,8 +27,8 @@ public class DatabaseController {
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement();
-            stmt.executeUpdate("use treningsdagbok");
+            System.out.println("Connected to database");
+
 
         } catch (SQLException se) {
             //Handle errors for JDBC
@@ -52,13 +55,13 @@ public class DatabaseController {
         }
 
     public void addOvelse(String Ovelse, String type){
-        String sql = "insert into øvelse (ØvelseID, øvelsetype) values (?,?)";
+        String sql = "insert into Øvelse (ØvelseID, øvelsetype) values (?,?)";
         try{
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, Ovelse);
             ps.setString(2, type);
             stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            ps.executeUpdate();
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -67,10 +70,12 @@ public class DatabaseController {
     }
 
     public void addOvelseApparat(String OvelseApparat){
-        String sql = "insert into øvelseapparat (ØvelseID) values" + OvelseApparat;
+        String sql = "insert into ØvelseApparat (ØvelseID) values(?)" ;
         try{
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, OvelseApparat);
             stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            ps.executeUpdate();
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -79,14 +84,14 @@ public class DatabaseController {
     }
 
     public void addOvelseVanlig(String OvelseVanlig, String Beskrivelse) {
-        String sql = "insert into øvelseapparat (ØvelseID, Beskrivelse) values(?,?)";
+        String sql = "insert into ØvelseVanlig (ØvelseID, Beskrivelse) values(?,?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, OvelseVanlig);
             ps.setString(2, Beskrivelse);
             stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            ps.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -94,14 +99,14 @@ public class DatabaseController {
     }
 
     public void addOvelsegruppe(String Ovelsegruppe, String Beskrivelse) {
-        String sql = "insert into øvelseapparat (Øvelsesgruppeid, Beskrivelse) values(?,?)";
+        String sql = "insert into Øvelsesgruppe (Øvelsesgruppeid, Beskrivelse) values(?,?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, Ovelsegruppe);
             ps.setString(2, Beskrivelse);
             stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            ps.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -109,11 +114,18 @@ public class DatabaseController {
     }
 
 
-    public void addApparat(String Apparat){
-        String sql = "insert into apparat (navn, beskrivelse) values" + Apparat;
+    public void addApparat(String Apparat, String Beskrivelse){
+        String sql = "insert into Apparat (navn, beskrivelse) values(?,?)";
         try{
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, Apparat);
+            ps.setString(2, Beskrivelse);
+
             stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            System.out.println(sql);
+
+            ps.executeUpdate();
+            System.out.println("Success");
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -168,7 +180,7 @@ public class DatabaseController {
         }
     }
 
-    
+
 
 
 

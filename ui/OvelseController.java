@@ -1,4 +1,4 @@
-package ui;
+
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,7 +29,12 @@ public class OvelseController implements Initializable, ControlledScreen{
 		maskin.setOnAction(new EventHandler<ActionEvent>(){
 	        @Override
 	        public void handle(ActionEvent event) {
-	        		beskrivelse.setVisible(true);
+	        	if(maskin.isSelected()){
+					beskrivelse.setVisible(true);
+				}else{
+	        		beskrivelse.setVisible(false);
+				}
+
 	        }
 	    });
 	}
@@ -41,6 +46,15 @@ public class OvelseController implements Initializable, ControlledScreen{
 
     @FXML
     void leggTil(ActionEvent event) {
+		if (maskin.isSelected()){
+			myController.dbController.addOvelse(navn.getText(), "apparat");
+
+			myController.dbController.addOvelseApparat(navn.getText());
+		}else{
+			myController.dbController.addOvelse(navn.getText(), "vanlig");
+			myController.dbController.addOvelseVanlig(navn.getText(), beskrivelse.getText());
+
+		}
 
     }
 

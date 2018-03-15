@@ -1,4 +1,4 @@
-package ui;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,6 +33,7 @@ public class OvelseGruppeController implements Initializable, ControlledScreen{
     		String gruppeNavn = navn.getText();
     		String gruppeBeskrivelse = beskrivelse.getText();
     		System.out.println(gruppeNavn+"\n"+gruppeBeskrivelse);
+    		myController.dbController.addOvelsegruppe(gruppeNavn, gruppeBeskrivelse);
     }
 
 	@Override

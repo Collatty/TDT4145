@@ -1,4 +1,4 @@
-package ui;
+
 import java.awt.Checkbox;
 import java.net.URL;
 import java.text.SimpleDateFormat;

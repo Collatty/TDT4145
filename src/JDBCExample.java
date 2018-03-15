@@ -11,7 +11,7 @@ import java.sql.*;
 
         //  Database credentials
         static final String USER = "hakon";
-        static final String PASS = ;
+        static final String PASS = "1";
 
         public static void main(String[] args) {
             Connection conn = null;

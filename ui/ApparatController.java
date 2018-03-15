@@ -1,4 +1,3 @@
-package ui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,6 +29,8 @@ public class ApparatController implements Initializable, ControlledScreen{
 
     @FXML
     void leggTil(ActionEvent event) {
+	    myController.dbController.addApparat(navn.getText(), beskrivelse.getText());
+
 
     }
 
