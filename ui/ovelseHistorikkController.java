@@ -2,12 +2,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.sql.Date;
@@ -16,6 +17,7 @@ import java.util.ResourceBundle;
 public class ovelseHistorikkController implements Initializable, ControlledScreen{
 
     private ScreensController myController;
+    private Treningsøkt valgtØkt; //økten som er trykket på i tabellen. brukes for å vite hvilken økt man skriver notat til.
 
     @FXML
     private TableView<Treningsøkt> treningsokter;
@@ -29,14 +31,37 @@ public class ovelseHistorikkController implements Initializable, ControlledScree
     private TextField n;
     @FXML
     private Button nullstill;
+    @FXML
+    private Button visNotat_btn;
+    @FXML
+    private Text visNotat_txt;
+    @FXML
+    private AnchorPane notat_pane;
+    @FXML
+    private TextArea notat_txt;
+    @FXML
+    private Text valgtØktInfo;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        visNotat_txt.setVisible(false);
+        visNotat_btn.setVisible(false);
         Dato.setCellValueFactory(new PropertyValueFactory<>("Dato"));
         Tidspunkt.setCellValueFactory(new PropertyValueFactory<>("Tidspunkt"));
         Varighet.setCellValueFactory(new PropertyValueFactory<>("Varighet"));
         loadTableView();
+        treningsokter.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                valgtØkt = treningsokter.getSelectionModel().getSelectedItem();
+                visNotat_txt.setVisible(true);
+                visNotat_btn.setVisible(true);
+                System.out.println((treningsokter.getSelectionModel().getSelectedItem())); //printer ut treningsøkt-objektet/instansen
+
+            }
+        });
+
     }
 
     public void loadTableView(){
@@ -68,6 +93,22 @@ public class ovelseHistorikkController implements Initializable, ControlledScree
             nOkter.add(t);
         }
         treningsokter.setItems(nOkter);
+    }
+
+    @FXML
+    public void visNotat(){
+        valgtØktInfo.setText(valgtØkt.toString());
+        notat_pane.setVisible(true);
+    }
+    @FXML
+    public void lukkNotat(){
+        notat_txt.clear();
+        notat_pane.setVisible(false);
+    }
+    @FXML
+    public void loggNotat(){
+        String notat = notat_txt.getText();
+        System.out.println(notat);
     }
 
     @FXML

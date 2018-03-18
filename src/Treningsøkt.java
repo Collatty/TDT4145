@@ -75,6 +75,6 @@ public class Treningsøkt implements Comparable<Treningsøkt>{
 
     @Override
     public String toString() {
-        return "ID: "+getID()+" Dato: "+getDato().toString()+" Tidspunkt: "+getTidspunkt().toString()+" Varighet: "+getVarighet();
+        return "ID: "+getID()+", Dato: "+getDato().toString()+", Tidspunkt: "+getTidspunkt().toString()+", Varighet: "+getVarighet();
     }
 }

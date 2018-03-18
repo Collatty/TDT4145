@@ -60,10 +60,7 @@ public class OktController implements Initializable, ControlledScreen{
     private AnchorPane ownDate;
     @FXML
     private ListView<OvelseIOkt> oktListe;
-    @FXML
-	private AnchorPane notat;
-    @FXML
-	private TextArea notat_txt;
+
 
     
 	@Override
@@ -143,9 +140,6 @@ public class OktController implements Initializable, ControlledScreen{
 	    myController.dbController.addTreningsokt(dato, startTid, varighet);
     }
 
-	public void visNotat(){notat.setVisible(true);}
-	public void skjulNotat(){notat.setVisible(false);}
-	public void loggNotat(){}
 
 	public String Date(ChoiceBox<String> dag, ChoiceBox<String> mnd, ChoiceBox<String> ar) {
 		String dato = "";
