@@ -1,6 +1,5 @@
 
-import java.awt.Checkbox;
-import java.lang.reflect.Array;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -8,7 +7,7 @@ import java.util.*;
 
 import javafx.collections.FXCollections;
 
-import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -17,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
@@ -60,6 +60,11 @@ public class OktController implements Initializable, ControlledScreen{
     private AnchorPane ownDate;
     @FXML
     private ListView<OvelseIOkt> oktListe;
+    @FXML
+	private AnchorPane notat;
+    @FXML
+	private TextArea notat_txt;
+
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -137,6 +142,11 @@ public class OktController implements Initializable, ControlledScreen{
         Integer varighet = Integer.parseInt((oktVarighet.getText()));
 	    myController.dbController.addTreningsokt(dato, startTid, varighet);
     }
+
+	public void visNotat(){notat.setVisible(true);}
+	public void skjulNotat(){notat.setVisible(false);}
+	public void loggNotat(){}
+
 	public String Date(ChoiceBox<String> dag, ChoiceBox<String> mnd, ChoiceBox<String> ar) {
 		String dato = "";
 		dato += ar.getValue();
