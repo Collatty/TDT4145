@@ -99,10 +99,7 @@ public class homeScreenController implements Initializable, ControlledScreen{
     
     @FXML
     void oktSok(ActionEvent event) {
-    		System.out.println("Få opp informasjon om "+n_okter.getText()+" siste gjennomførte økter");
-    		int n = Integer.parseInt(n_okter.getText());
-    		//hent n siste økter fra database
-
+		myController.setScreen(ApplicationDemo.OvelseHistorikkID);
     }
     @FXML
     void ovelseGruppe(ActionEvent event) {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ovelseHistorikkController">
+   <children>
+      <TableView fx:id="treningsokter" layoutX="33.0" layoutY="132.0" prefHeight="309.0" prefWidth="442.0">
+         <columns>
+            <TableColumn fx:id="Dato" prefWidth="143.0" resizable="false" text="Dato" />
+            <TableColumn fx:id="Tidspunkt" minWidth="7.0" prefWidth="168.0" resizable="false" text="Klokkeslett" />
+            <TableColumn fx:id="Varighet" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" resizable="false" text="Varighet" />
+         </columns>
+      </TableView>
+      <Text layoutX="65.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Søk etter n=          sist gjennomførte økter:" wrappingWidth="289.345703125" />
+      <TextField fx:id="n" layoutX="144.0" layoutY="81.0" prefHeight="26.0" prefWidth="35.0" promptText="..." />
+      <Text layoutX="187.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINE TRENINGSØKTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="354.0" layoutY="81.0" mnemonicParsing="false" onAction="#nSisteOkter" text="Søk" />
+      <Button fx:id="nullstill" layoutX="409.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#resetTable" text="Nullstill" />
+      <Button layoutX="18.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToHome" text="Back" />
+   </children>
+</AnchorPane>

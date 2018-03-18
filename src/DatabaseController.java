@@ -1,4 +1,8 @@
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -211,7 +215,25 @@ public class DatabaseController {
     }
 
 
+    public void loadTableView(TableView<Treningsøkt> table){
+        ObservableList<Treningsøkt> data = FXCollections.observableArrayList();
+        String sql = "select * from Treningsøkt";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
 
+            while(rs.next()){
+                Treningsøkt økt = Treningsøkt.nyTreningsøkt(rs.getInt("TreningsøktID"), rs.getDate("Dato"), rs.getTime("Tidspunkt"), rs.getInt("Varighet"));
+                System.out.println(økt);
+                data.add(økt);
+                table.setItems(data);
+            }
+            ps.close();
+            rs.close();
+            
+
+        }catch (SQLException e){e.printStackTrace();}
+    }
 
 
 

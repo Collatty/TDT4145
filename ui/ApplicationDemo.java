@@ -18,6 +18,8 @@ public class ApplicationDemo extends Application{
     public static String OvelseGruppeFile = "OvelseGruppe.fxml";
     public static String ApparatID = "Apparat";
     public static String ApparatFile = "Apparat.fxml";
+    public static String OvelseHistorikkID = "OvelseHistorikk";
+    public static String OvelseHistorikkFile = "ovelseHistorikk.fxml";
     public static String SokOvelseGruppeID = "SokOvelseGruppe";
     public static String SokOvelseGruppeFile = "SokOvelseGruppe.fxml";
     
@@ -32,6 +34,7 @@ public class ApplicationDemo extends Application{
 		container.loadScreen(ApplicationDemo.OvelseGruppeID, ApplicationDemo.OvelseGruppeFile);
 		container.loadScreen(ApplicationDemo.ApparatID, ApplicationDemo.ApparatFile);
 		container.loadScreen(ApplicationDemo.SokOvelseGruppeID, ApplicationDemo.SokOvelseGruppeFile);
+		container.loadScreen(ApplicationDemo.OvelseHistorikkID,ApplicationDemo.OvelseHistorikkFile);
 		
 		container.setScreen(ApplicationDemo.HomescreenID);
 				
