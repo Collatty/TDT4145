@@ -153,14 +153,14 @@ public class DatabaseConnector {
 
     }
 
-    public String addTreningsokt(String Dato, String Tidspunkt, Integer Varighet) {
+    public String addTreningsokt(Date Dato, Time Tidspunkt, Integer Varighet) {
         String sql = "insert into Treningsøkt (Dato, Tidspunkt, Varighet) values(?,?,?)";
         String ovelseid;
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, Dato);
-            ps.setString(2, Tidspunkt);
+            ps.setDate(1, Dato);
+            ps.setTime (2, Tidspunkt);
             ps.setInt(3, Varighet);
 
             ResultSet rs = ps.executeQuery();
@@ -172,7 +172,6 @@ public class DatabaseConnector {
         }
         return ovelseid;
     }
-
     public void addNotat(Integer treningsøktid, String treningsformål, String Vurdering) {
         String sql = "insert into notat (treningsøktid, treningsformål, Vurdering) values(?,?,?)";
 
