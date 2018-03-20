@@ -267,7 +267,7 @@ public class DatabaseConnector {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                ovelsesgrupper.add(rs.getString(0));
+                ovelsesgrupper.add(rs.getString(1));
             }
 
 
@@ -291,7 +291,7 @@ public class DatabaseConnector {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                ovelser.add(rs.getString(0));
+                ovelser.add(rs.getString(1));
             }
 
 
