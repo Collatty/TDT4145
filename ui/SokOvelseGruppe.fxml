@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="SokOvelseGruppeController">
    <children>
-      <ListView fx:id="guppe" layoutX="24.0" layoutY="164.0" prefHeight="243.0" prefWidth="202.0" />
+      <ListView fx:id="gruppe" layoutX="24.0" layoutY="164.0" prefHeight="243.0" prefWidth="202.0" />
       <Text layoutX="60.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Øvelsegruppe:" />
       <ListView fx:id="ovelse" layoutX="274.0" layoutY="164.0" prefHeight="243.0" prefWidth="202.0" />
       <Text layoutX="310.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Øvelser:" />

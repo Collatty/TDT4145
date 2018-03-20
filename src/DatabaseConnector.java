@@ -291,7 +291,7 @@ public class DatabaseConnector {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                ovelser.add(rs.getString(0));
+                ovelser.add(rs.getString(1));
             }
 
 
