@@ -153,8 +153,9 @@ public class DatabaseConnector {
 
     }
 
-    public void addTreningsokt(String Dato, String Tidspunkt, Integer Varighet) {
+    public String addTreningsokt(String Dato, String Tidspunkt, Integer Varighet) {
         String sql = "insert into Treningsøkt (Dato, Tidspunkt, Varighet) values(?,?,?)";
+        String ovelseid;
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -162,12 +163,14 @@ public class DatabaseConnector {
             ps.setString(2, Tidspunkt);
             ps.setInt(3, Varighet);
 
-            stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            ResultSet rs = ps.executeQuery();
+            ovelseid = rs.getString(1);
 
         } catch (SQLException e) {
             e.printStackTrace();
+            ovelseid = "mongo";
         }
+        return ovelseid;
     }
 
     public void addNotat(Integer treningsøktid, String treningsformål, String Vurdering) {
