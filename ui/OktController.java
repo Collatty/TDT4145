@@ -1,7 +1,9 @@
 
 
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -25,7 +27,8 @@ public class OktController implements Initializable, ControlledScreen{
 
 
 
-	public  List<OvelseIOkt> ovelseiokt = new ArrayList<OvelseIOkt>();
+	public  ObservableList<OvelseIOkt> ovelseriOkt = FXCollections.observableArrayList();
+	public String valgtOktID =null;
 
 
 	private ScreensController myController;
@@ -101,32 +104,21 @@ public class OktController implements Initializable, ControlledScreen{
 	
 	@FXML
 	public void loggOkt(){
-		String dato = null;
-		if (todayCheck.isSelected()) {
-			String DATE_FORMAT_NOW = "yyyy-MM-dd";
-			Calendar cal = Calendar.getInstance();
-			SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
-			dato = sdf.format(cal.getTime());
-			
-		}else{dato = Date(okt_dag, okt_mnd, okt_ar);}
-		
-		String startTid = oktTime.getText()+":"+oktMinutt.getText()+":00";
-		String varighet = oktVarighet.getText();
-		System.out.println("\t-ØKT-\nDato: "+dato+"\nStartet kl: "+startTid+"\nVarighet: "+varighet);
-		//her vil vi også ha en liste med øvelse-i-økt instanser.
 	}
 
 	@FXML
 	public void leggTilOvelse(){
-
-	    //ovelseiokt.add();
-        ObservableList<OvelseIOkt> ovelseriokt = FXCollections.observableList(ovelseiokt);
-        oktListe.setItems(ovelseriokt);
-
+		if (valgtOktID != null) {
+			OvelseIOkt okt = new OvelseIOkt(valgtOktID, ovelseListe.getSelectionModel().getSelectedItem(), Integer.parseInt(Set.getText()), Integer.parseInt(Kg.setText()), Integer.parseInt(form.getValue()), Integer.parseInt(prestasjon.getValue()));
+			ovelseriOkt.add(okt);
+			oktListe.setItems(ovelseriOkt);
+		}else{
+			System.out.println("du må opprette økt før du legger til øvelse");
+		}
 	}
 	@FXML
     public void oprettOkt(){
-        String dato = null;
+		String dato = null;
         if (todayCheck.isSelected()) {
             String DATE_FORMAT_NOW = "yyyy-MM-dd";
             Calendar cal = Calendar.getInstance();
@@ -136,8 +128,9 @@ public class OktController implements Initializable, ControlledScreen{
         }else{dato = Date(okt_dag, okt_mnd, okt_ar);}
 
         String startTid = oktTime.getText()+":"+oktMinutt.getText()+":00";
+		Time sTid = new Time(Integer.parseInt(oktTime.getText()),Integer.parseInt(oktMinutt.getText()),00);
         Integer varighet = Integer.parseInt((oktVarighet.getText()));
-	    myController.dbController.addTreningsokt(dato, startTid, varighet);
+	    valgtOktID = myController.dbController.addTreningsokt(dato, startTid, varighet);
     }
 
 
