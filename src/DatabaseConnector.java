@@ -303,5 +303,25 @@ public class DatabaseConnector {
 
 
     }
+
+    public void addOvelseIOkt(OvelseIOkt ovelseIOkt) {
+        String sql = "insert into ØvelseIØkt (ØktID, ØvelseID, Set, Kg, Form, Prestasjon) values(?, ?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, ovelseIOkt.getOktID());
+            ps.setString(2, ovelseIOkt.getOvelseID());
+            ps.setInt(3, ovelseIOkt.getSet());
+            ps.setInt(4, ovelseIOkt.getVekt());
+            ps.setInt(5, ovelseIOkt.getForm());
+            ps.setInt(6, ovelseIOkt.getPrestasjon());
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
 
