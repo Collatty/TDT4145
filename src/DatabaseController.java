@@ -224,7 +224,6 @@ public class DatabaseController {
 
             while(rs.next()){
                 Treningsøkt økt = Treningsøkt.nyTreningsøkt(rs.getInt("TreningsøktID"), rs.getDate("Dato"), rs.getTime("Tidspunkt"), rs.getInt("Varighet"));
-                System.out.println(økt);
                 data.add(økt);
                 table.setItems(data);
             }
@@ -236,7 +235,24 @@ public class DatabaseController {
     }
 
 
+    public String displayNotat(int oktid){
 
+        String sql = "select Treningsnotat from Notat where TreningsøktID = ?";
+
+
+        try{
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, oktid);
+            System.out.println(ps);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            return rs.getString(1);
+        }catch (SQLException e){
+            e.printStackTrace();
+            return "No Notates from given trainingsøkt";
+        }
+
+    }
 
 
 

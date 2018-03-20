@@ -19,7 +19,7 @@ public class SokOvelseGruppeController implements Initializable, ControlledScree
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub	
+
 	}
 
     @FXML

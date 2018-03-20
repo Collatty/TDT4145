@@ -41,12 +41,17 @@ public class ovelseHistorikkController implements Initializable, ControlledScree
     private TextArea notat_txt;
     @FXML
     private Text valgtØktInfo;
+    @FXML
+    private Button displayNotat_btn;
+    @FXML
+    private Button loggNotat_btn;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         visNotat_txt.setVisible(false);
         visNotat_btn.setVisible(false);
+        displayNotat_btn.setVisible(false);
         Dato.setCellValueFactory(new PropertyValueFactory<>("Dato"));
         Tidspunkt.setCellValueFactory(new PropertyValueFactory<>("Tidspunkt"));
         Varighet.setCellValueFactory(new PropertyValueFactory<>("Varighet"));
@@ -55,6 +60,7 @@ public class ovelseHistorikkController implements Initializable, ControlledScree
             @Override
             public void handle(MouseEvent event) {
                 valgtØkt = treningsokter.getSelectionModel().getSelectedItem();
+                displayNotat_btn.setVisible(true);
                 visNotat_txt.setVisible(true);
                 visNotat_btn.setVisible(true);
                 System.out.println((treningsokter.getSelectionModel().getSelectedItem())); //printer ut treningsøkt-objektet/instansen
@@ -96,8 +102,19 @@ public class ovelseHistorikkController implements Initializable, ControlledScree
     }
 
     @FXML
+    public void displayNotat(){
+        valgtØktInfo.setText(valgtØkt.toString());
+        String notat = myController.dbController.displayNotat(valgtØkt.getID());
+        notat_txt.setText(notat);
+        loggNotat_btn.setVisible(false);
+        notat_pane.setVisible(true);
+
+    }
+
+    @FXML
     public void visNotat(){
         valgtØktInfo.setText(valgtØkt.toString());
+        loggNotat_btn.setVisible(true);
         notat_pane.setVisible(true);
     }
     @FXML

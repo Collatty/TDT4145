@@ -30,11 +30,12 @@
       <Button layoutX="18.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToHome" text="Back" />
       <Button fx:id="visNotat_btn" layoutX="265.0" layoutY="452.0" mnemonicParsing="false" onAction="#visNotat" text="Legg til notat" />
       <Text fx:id="visNotat_txt" layoutX="370.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(for markert økt)" />
+      <Button fx:id="displayNotat_btn" layoutX="162.0" layoutY="452.0" mnemonicParsing="false" onAction="#displayNotat" text="Vis Notat" />
       <AnchorPane fx:id="notat_pane" layoutX="28.0" layoutY="102.0" prefHeight="364.0" prefWidth="442.0" style="-fx-background-color: lightgray; -fx-border-color: gray; visibility: false;" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="25.0">
          <children>
             <TextArea fx:id="notat_txt" layoutX="13.0" layoutY="80.0" prefHeight="229.0" prefWidth="416.0" />
             <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#lukkNotat" text="Avbryt" />
-            <Button layoutX="368.0" layoutY="324.0" mnemonicParsing="false" onAction="#loggNotat" text="Legg Til" />
+            <Button fx:id="loggNotat_btn" layoutX="368.0" layoutY="324.0" mnemonicParsing="false" onAction="#loggNotat" text="Legg Til" />
             <Text fx:id="valgtØktInfo" layoutX="23.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="403.345703125">
                <font>
                   <Font size="12.0" />
