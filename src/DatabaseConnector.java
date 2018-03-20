@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseController {
+public class DatabaseConnector {
 
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://mysql.stud.ntnu.no:3306/ntnu_all_treningsdagbok?autoReconnect=true&useSSL=false";
@@ -21,7 +21,7 @@ public class DatabaseController {
     Statement stmt = null;
 
 
-    public DatabaseController() {
+    public DatabaseConnector() {
 
 
 

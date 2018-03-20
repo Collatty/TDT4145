@@ -11,7 +11,7 @@ import javafx.scene.layout.StackPane;
 public class ScreensController  extends StackPane{//StackPane lays out its children in a back-to-front stack.
     
 	//Holds the screens to be displayed
-    public static DatabaseController dbController = new DatabaseController();
+    public static DatabaseConnector dbController = new DatabaseConnector();
     private HashMap<String, Node> screens = new HashMap<>();
     
     public ScreensController() {
