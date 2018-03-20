@@ -237,29 +237,47 @@ public class DatabaseConnector {
 
     public String displayNotat(int oktid){
 
-        String sql = "select Treningsnotat from Notat where TreningsøktID = ?";
+            String sql = "select Treningsnotat from Notat where TreningsøktID = ?";
 
 
-        try{
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, oktid);
-            System.out.println(ps);
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            return rs.getString(1);
-        }catch (SQLException e){
-            e.printStackTrace();
-            return "No Notates from given trainingsøkt";
-        }
+            try{
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1, oktid);
+                System.out.println(ps);
+                ResultSet rs = ps.executeQuery();
+                rs.next();
+                return rs.getString(1);
+            }catch (SQLException e){
+                e.printStackTrace();
+                return "No Notates from given trainingsøkt";
+            }
+
+
 
     }
 
+    public ObservableList<String> displayOvelsesgrupper() {
+
+        String sql = "select ØvelsesgruppeID from Øvelsesgruppe";
+        ObservableList<String> ovelsesgrupper = FXCollections.observableArrayList();
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                ovelsesgrupper.add(rs.getString(0));
+            }
 
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return ovelsesgrupper;
 
 
-
-
-
+    }
 }
 
