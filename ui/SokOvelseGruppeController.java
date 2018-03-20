@@ -25,6 +25,7 @@ public class SokOvelseGruppeController implements Initializable, ControlledScree
 			@Override
 			public void handle(MouseEvent event) {
 				valgtGruppe = gruppe.getSelectionModel().getSelectedItem();
+				ovelse.setItems(myController.dbController.displayOvelser(valgtGruppe));
 				System.out.println(valgtGruppe);
 			}
 		});
