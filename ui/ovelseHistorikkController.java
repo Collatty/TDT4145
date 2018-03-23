@@ -126,6 +126,7 @@ public class ovelseHistorikkController implements Initializable, ControlledScree
     public void loggNotat(){
         String notat = notat_txt.getText();
         System.out.println(notat);
+        myController.dbController.addNotat(valgtØkt.getID(), notat);
     }
 
     @FXML

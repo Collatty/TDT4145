@@ -12,7 +12,6 @@ public class OvelseIOkt {
     public OvelseIOkt(int oktID, String OvesleID, int set, int vekt, int form, int prestasjon){
         this.oktID = oktID;
         this.OvelseID= OvesleID;
-
         this.set=set;
         this.vekt=vekt;
         this.form=form;

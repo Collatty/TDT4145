@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -17,6 +18,7 @@ public class OvelseGruppeController implements Initializable, ControlledScreen{
     private TextField navn;
     @FXML
     private TextArea beskrivelse;
+
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

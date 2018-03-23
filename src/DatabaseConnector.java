@@ -153,35 +153,59 @@ public class DatabaseConnector {
 
     }
 
-    public String addTreningsokt(Date Dato, Time Tidspunkt, Integer Varighet) {
+
+
+    public int addTreningsokt(String Dato, String Tidspunkt, Integer Varighet) {
         String sql = "insert into Treningsøkt (Dato, Tidspunkt, Varighet) values(?,?,?)";
-        String ovelseid;
+        int ovelseid;
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setDate(1, Dato);
-            ps.setTime (2, Tidspunkt);
+            ps.setString(1, Dato);
+            ps.setString (2, Tidspunkt);
             ps.setInt(3, Varighet);
 
-            ResultSet rs = ps.executeQuery();
-            ovelseid = rs.getString(1);
+            ps.executeUpdate();
+            ps.close();
+
+            String sql1 = "select (TreningsøktID) from Treningsøkt where Dato = ? and Tidspunkt = ? and Varighet = ?";
+
+            PreparedStatement ps1 = conn.prepareStatement(sql1);
+            ps1.setString(1, Dato);
+            ps1.setString(2, Tidspunkt);
+            ps1.setInt(3, Varighet);
+
+            ResultSet rs = ps1.executeQuery();
+            rs.next();
+            ovelseid = rs.getInt(1);
 
         } catch (SQLException e) {
             e.printStackTrace();
-            ovelseid = "mongo";
+            ovelseid = 0;
         }
         return ovelseid;
     }
-    public void addNotat(Integer treningsøktid, String treningsformål, String Vurdering) {
-        String sql = "insert into notat (treningsøktid, treningsformål, Vurdering) values(?,?,?)";
+    public void addNotat(Integer treningsøktid, String notat) {
+        String delete = "delete from Notat where TreningsøktID= ?";
+        String sql = "insert into Notat (TreningsøktID, Treningsnotat) values(?,?)";
+
+        try{
+
+            PreparedStatement ps = conn.prepareStatement(delete);
+            ps.setInt(1, treningsøktid);
+            ps.executeUpdate();
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, treningsøktid);
-            ps.setString(2, treningsformål);
-            ps.setString(3, Vurdering);
-            stmt = conn.createStatement();
-            stmt.executeUpdate(sql);
+            ps.setString(2, notat);
+
+
+            ps.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -306,17 +330,17 @@ public class DatabaseConnector {
 
     }
 
-    public void addOvelseIOkt(OvelseIOkt ovelseIOkt) {
+    public void addOvelseIOkt(int øktid, String ovelseid, int set, int kg, int form, int prestasjon) {
         String sql = "insert into ØvelseIØkt (ØktID, ØvelseID, Set, Kg, Form, Prestasjon) values(?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, ovelseIOkt.getOktID());
-            ps.setString(2, ovelseIOkt.getOvelseID());
-            ps.setInt(3, ovelseIOkt.getSet());
-            ps.setInt(4, ovelseIOkt.getVekt());
-            ps.setInt(5, ovelseIOkt.getForm());
-            ps.setInt(6, ovelseIOkt.getPrestasjon());
+            ps.setInt(1, øktid);
+            ps.setString(2, ovelseid);
+            ps.setInt(3, set);
+            ps.setInt(4, kg);
+            ps.setInt(5, form);
+            ps.setInt(6, prestasjon);
             ps.executeUpdate();
 
         } catch (SQLException e) {

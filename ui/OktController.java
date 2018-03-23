@@ -28,7 +28,7 @@ public class OktController implements Initializable, ControlledScreen{
 
 
 	public  ObservableList<OvelseIOkt> ovelseriOkt = FXCollections.observableArrayList();
-	public String valgtOktID =null;
+	public int valgtOktID =0;
 
 
 	private ScreensController myController;
@@ -108,8 +108,11 @@ public class OktController implements Initializable, ControlledScreen{
 
 	@FXML
 	public void leggTilOvelse(){
-		if (valgtOktID != null) {
-			OvelseIOkt okt = new OvelseIOkt(valgtOktID, ovelseListe.getSelectionModel().getSelectedItem(), Integer.parseInt(Set.getText()), Integer.parseInt(Kg.setText()), Integer.parseInt(form.getValue()), Integer.parseInt(prestasjon.getValue()));
+		if (valgtOktID != 0) {
+			OvelseIOkt okt = new OvelseIOkt(valgtOktID,
+                    ovelseListe.getSelectionModel().getSelectedItem(),
+                    Integer.parseInt(Set.getText()), Integer.parseInt(Kg.getText()),
+                    Integer.parseInt(form.getValue()), Integer.parseInt(prestasjon.getValue()));
 			ovelseriOkt.add(okt);
 			oktListe.setItems(ovelseriOkt);
 		}else{
@@ -128,7 +131,6 @@ public class OktController implements Initializable, ControlledScreen{
         }else{dato = Date(okt_dag, okt_mnd, okt_ar);}
 
         String startTid = oktTime.getText()+":"+oktMinutt.getText()+":00";
-		Time sTid = new Time(Integer.parseInt(oktTime.getText()),Integer.parseInt(oktMinutt.getText()),00);
         Integer varighet = Integer.parseInt((oktVarighet.getText()));
 	    valgtOktID = myController.dbController.addTreningsokt(dato, startTid, varighet);
     }
