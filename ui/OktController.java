@@ -100,6 +100,11 @@ public class OktController implements Initializable, ControlledScreen{
 	    	    "Jan", "Feb", "Mar","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Des")));
 		okt_ar.setItems(FXCollections.observableArrayList(
 	    	    "2017", "2018"));
+		form.setItems(FXCollections.observableArrayList(
+				"1","2","3","4","5","6","7","8","9","10"));
+		prestasjon.setItems(FXCollections.observableArrayList(
+				"1","2","3","4","5","6","7","8","9","10"));
+
 	}
 	
 	@FXML
@@ -114,6 +119,9 @@ public class OktController implements Initializable, ControlledScreen{
                     Integer.parseInt(Set.getText()), Integer.parseInt(Kg.getText()),
                     Integer.parseInt(form.getValue()), Integer.parseInt(prestasjon.getValue()));
 			ovelseriOkt.add(okt);
+//			myController.dbController.addOvelseIOkt(valgtOktID, ovelseListe.getSelectionModel().getSelectedItem(),
+//					Integer.parseInt(Set.getText()), Integer.parseInt(Kg.getText()), Integer.parseInt(form.getValue()),
+//							Integer.parseInt(prestasjon.getValue()));
 			oktListe.setItems(ovelseriOkt);
 		}else{
 			System.out.println("du må opprette økt før du legger til øvelse");
@@ -168,6 +176,8 @@ public class OktController implements Initializable, ControlledScreen{
 		dato += dag.getValue();
 		return dato;
     }
+
+
 	
 	@FXML
 	public void goToHome() {

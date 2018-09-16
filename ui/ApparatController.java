@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 
 public class ApparatController implements Initializable, ControlledScreen{
 
-	ScreensController myController;
+	private ScreensController myController;
 	
     @FXML
     private TextField navn;

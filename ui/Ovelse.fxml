@@ -18,7 +18,7 @@
       <Text layoutX="77.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Øvelse navn:" />
       <TextField fx:id="navn" layoutX="168.0" layoutY="140.0" />
       <CheckBox fx:id="maskin" layoutX="336.0" layoutY="144.0" mnemonicParsing="false" text="Maskin" />
-      <TextArea style= "visibility: false;" fx:id="beskrivelse" layoutX="150.0" layoutY="196.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="beskrivelse" layoutX="150.0" layoutY="196.0" prefHeight="200.0" prefWidth="200.0" />
       <Text layoutX="77.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse:" />
       <Button layoutX="387.0" layoutY="438.0" mnemonicParsing="false" onAction="#leggTil" text="Legg Til" />
       <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToHome" text="Back" />

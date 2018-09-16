@@ -348,6 +348,11 @@ public class DatabaseConnector {
         }
     }
 
+//    public String sokEtterOvelse( String fra, String til, String navn){
+//
+//        String sql = select
+//    }
+
 
 }
 

@@ -26,13 +26,14 @@ public class OvelseController implements Initializable, ControlledScreen{
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		beskrivelse.setVisible(true);
 		maskin.setOnAction(new EventHandler<ActionEvent>(){
 	        @Override
 	        public void handle(ActionEvent event) {
 	        	if(maskin.isSelected()){
-					beskrivelse.setVisible(true);
+					beskrivelse.setVisible(false);
 				}else{
-	        		beskrivelse.setVisible(false);
+	        		beskrivelse.setVisible(true);
 				}
 
 	        }
